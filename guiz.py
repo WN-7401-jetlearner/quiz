@@ -3,6 +3,10 @@ import pgzrun
 WIDTH =700
 HEIGHT = 600
 
+count=0
+a=3
+questions=[]
+
 # Colours
 WHITE = (238,232,240)
 BLUE = (0,0,200)
@@ -17,7 +21,7 @@ opt3=Rect(0,350,250,90)
 opt4=Rect(300,350,250,90)
 marquee_box=Rect((0,0),(700,100))
 T=Rect(580,100,90,90)
-marquee_message="welcome to the quiz"
+marquee_message=f"welcome to the quiz we are at {count}/{a}"
 sbox=Rect(580,250 ,100,190)
 
 def move():
@@ -48,8 +52,29 @@ def draw():
     #textboxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     screen.draw.textbox(marquee_message,marquee_box,color=BLACK)
     #screen.draw.filled_rect(,BLUE)
+
+
+
     
+def read_text_file():#
+    global count
+    readtext=open("text.txt","r")
+    for i in readtext:
+        questions.append(i)
+        count=count+1
 
 
+
+
+
+read_text_file()
+
+
+
+
+
+
+
+ 
 
 pgzrun.go()
